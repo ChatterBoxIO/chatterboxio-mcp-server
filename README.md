@@ -1,4 +1,5 @@
 # ChatterBox MCP Server
+[![smithery badge](https://smithery.ai/badge/@OverQuotaAI/chatterboxio-mcp-server)](https://smithery.ai/server/@OverQuotaAI/chatterboxio-mcp-server)
 
 A Model Context Protocol server implementation for ChatterBox, enabling AI agents to interact with online meetings and generate meeting summaries.
 
@@ -16,6 +17,15 @@ The ChatterBox MCP Server provides tools for AI agents to:
 
 ## Installation
 
+### Installing via Smithery
+
+To install chatterboxio-mcp-server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@OverQuotaAI/chatterboxio-mcp-server):
+
+```bash
+npx -y @smithery/cli install @OverQuotaAI/chatterboxio-mcp-server --client claude
+```
+
+### Manual Installation
 You can install the dependencies using either npm or pnpm:
 
 ```bash
