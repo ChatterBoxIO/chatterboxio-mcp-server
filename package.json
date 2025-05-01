@@ -1,0 +1,31 @@
+{
+  "name": "chatterboxio-mcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "chatterboxio-mcp-server": "./build/index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [],
+  "author": "Alex Tsimbalistov",
+  "license": "MIT",
+  "packageManager": "pnpm@10.5.2",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "dotenv": "^16.5.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.3",
+    "@types/node": "^22.15.2",
+    "typescript": "^5.8.3"
+  }
+}
