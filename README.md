@@ -1,4 +1,5 @@
 # ChatterBox MCP Server
+
 [![smithery badge](https://smithery.ai/badge/@OverQuotaAI/chatterboxio-mcp-server)](https://smithery.ai/server/@OverQuotaAI/chatterboxio-mcp-server)
 
 A Model Context Protocol server implementation for ChatterBox, enabling AI agents to interact with online meetings and generate meeting summaries.
@@ -26,6 +27,7 @@ npx -y @smithery/cli install @OverQuotaAI/chatterboxio-mcp-server --client claud
 ```
 
 ### Manual Installation
+
 You can install the dependencies using either npm or pnpm:
 
 ```bash
@@ -56,7 +58,7 @@ CHATTERBOX_API_KEY=your_api_key_here
 ### Starting the Server
 
 ```bash
-npm start
+pnpm start
 ```
 
 ### Available Tools
@@ -99,7 +101,15 @@ Generate a concise summary of a meeting's contents from its transcript.
 ### Building
 
 ```bash
-npm run build
+pnpm run build
+```
+
+### Debugging
+
+To debug the MCP server using the MCP Inspector:
+
+```bash
+npx @modelcontextprotocol/inspector
 ```
 
 ## License

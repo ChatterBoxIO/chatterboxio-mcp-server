@@ -37,21 +37,21 @@ function handleApiError(error: unknown, context: string): ToolResponse {
     
     if (error instanceof Error) {
         return {
-            content: [{ type: "text", text: `An unexpected error occurred: ${error.message}` }],
+            content: [{ type: "text", text: error.message }],
             isError: true,
             _meta: {
-                errorCode: "UNKNOWN_ERROR",
+                errorCode: "ERROR",
                 errorMessage: error.message
             }
         };
     }
     
     return {
-        content: [{ type: "text", text: "An unexpected error occurred" }],
+        content: [{ type: "text", text: "Server error" }],
         isError: true,
         _meta: {
-            errorCode: "UNKNOWN_ERROR",
-            errorMessage: "Unknown error occurred"
+            errorCode: "ERROR",
+            errorMessage: "Server error"
         }
     };
 }
@@ -100,7 +100,7 @@ server.tool(
       const data = await response.json();
 
       return {
-        content: [{ type: "text", text: `Meeting joined successfully. Session ID: ${data.sessionId}` }]
+        content: [{ type: "text", text: `Meeting bot deployed. Session ID: ${data.sessionId}` }]
       };
     } catch (error) {
       return handleApiError(error, "joinMeeting");
@@ -131,7 +131,7 @@ server.tool(
         return {
           content: [{ type: "text", text: data.message }],
           isError: true,
-          _meta: { errorCode: "UNKNOWN_ERROR", errorMessage: data.message }
+          _meta: { errorCode: "ERROR", errorMessage: data.message }
         };
       }
 
