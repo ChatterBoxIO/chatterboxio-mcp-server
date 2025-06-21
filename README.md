@@ -12,7 +12,7 @@ A Model Context Protocol server implementation for ChatterBox, enabling AI agent
 
 The ChatterBox MCP Server provides tools for AI agents to:
 
-- Join online meetings (Zoom and Google Meet)
+- Join online meetings (Zoom, Google Meet, or Microsoft Teams)
 - Capture transcripts and recordings
 - Generate meeting summaries
 
@@ -69,9 +69,9 @@ Join a Zoom or Google Meet meeting and capture transcript and audio recording.
 
 **Parameters:**
 
-- `platform` (string): The online conference platform ("zoom" or "googlemeet")
+- `platform` (string): The online conference platform ("zoom", "googlemeet", or "teams")
 - `meetingId` (string): The ID of the meeting
-- `meetingPassword` (string, optional): The password for the meeting
+- `meetingPassword` (string, optional): The password or the passcode for the meeting
 - `botName` (string): The name of the bot
 - `webhookUrl` (string, optional): URL to receive webhook events for meeting status
 

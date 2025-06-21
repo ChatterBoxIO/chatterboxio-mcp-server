@@ -20,13 +20,13 @@
   "license": "MIT",
   "packageManager": "pnpm@10.5.2",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.11.2",
+    "@modelcontextprotocol/sdk": "^1.13.0",
     "dotenv": "^16.5.0",
-    "zod": "^3.24.4"
+    "zod": "^3.25.67"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.3",
-    "@types/node": "^22.15.18",
+    "@types/node": "^22.15.32",
     "typescript": "^5.8.3"
   }
 }

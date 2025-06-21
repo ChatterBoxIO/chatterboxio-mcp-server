@@ -59,7 +59,7 @@ function handleApiError(error: unknown, context: string): ToolResponse {
 // Create server instance
 const server = new McpServer({
   name: "chatterbox",
-  version: "1.0.0",
+  version: "1.1.0",
   capabilities: {
     tools: {},
     resources: {},
@@ -69,15 +69,21 @@ const server = new McpServer({
 // Register tools
 server.tool(
   "joinMeeting",
-  "Join a Zoom or Google Meet meeting using the provided meeting ID and password and capture transcript and audio recording",
+  "Join a Zoom, Google Meet, or Microsoft Teams meeting using the provided meeting ID and password and capture transcript and audio recording",
   {
-    platform: z.enum(["zoom", "googlemeet"]).describe("The online conference platform (zoom or googlemeet)"),
-    meetingId: z.string().describe("The ID of the Zoom ('###########') or Google Meet ('xxx-xxx-xxx') meeting"),
-    meetingPassword: z.string().optional().describe("The password for the Zoom meeting (optional)"),
+    platform: z.enum(["zoom", "googlemeet", "teams"]).describe("The online conference platform (zoom, googlemeet, or teams)"),
+    meetingId: z.string().describe("The ID of the Zoom ('###########') or Google Meet ('xxx-xxx-xxx') or Microsoft Teams ('##########') meeting"),
+    meetingPassword: z.string().optional().describe("The password or the passcode for the Zoom or Google Meet or Microsoft Teams meeting (optional)"),
     botName: z.string().describe("The name of the bot"),
     webhookUrl: z.string().optional().describe("URL to receive webhook events for meeting status (optional)"),
   },
-  async ({ platform, meetingId, meetingPassword, botName, webhookUrl }) => {
+  async ({ platform, meetingId, meetingPassword, botName, webhookUrl }: {
+    platform: string;
+    meetingId: string;
+    meetingPassword?: string;
+    botName: string;
+    webhookUrl?: string;
+  }) => {
     try {
       const response = await fetch(
         `${CHATTERBOX_API_ENDPOINT}/join`,
@@ -114,7 +120,7 @@ server.tool(
   {
     sessionId: z.string().describe("The session ID to get information for"),
   },
-  async ({ sessionId }) => {
+  async ({ sessionId }: { sessionId: string }) => {
     try {
       const response = await fetch(
         `${CHATTERBOX_API_ENDPOINT}/session/${sessionId}`,
@@ -167,7 +173,7 @@ server.tool(
   {
     transcript: z.string().describe("The meeting transcript to summarize"),
   },
-  async ({ transcript }) => {
+  async ({ transcript }: { transcript: string }) => {
     return {
       content: [{
         type: "text",
