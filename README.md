@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/chatterboxio-chatterboxio-mcp-server-badge.png)](https://mseep.ai/app/chatterboxio-chatterboxio-mcp-server)
+
 # ChatterBox MCP Server
 
 [![smithery badge](https://smithery.ai/badge/@OverQuotaAI/chatterboxio-mcp-server)](https://smithery.ai/server/@OverQuotaAI/chatterboxio-mcp-server)
