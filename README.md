@@ -4,8 +4,8 @@
 
 A Model Context Protocol server implementation for ChatterBox, enabling AI agents to interact with online meetings and generate meeting summaries.
 
-<a href="https://glama.ai/mcp/servers/@OverQuotaAI/chatterboxio-mcp-server">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/@OverQuotaAI/chatterboxio-mcp-server/badge" alt="ChatterBox Server MCP server" />
+<a href="https://glama.ai/mcp/servers/@ChatterBoxIO/chatterboxio-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@ChatterBoxIO/chatterboxio-mcp-server/badge" alt="ChatterBox MCP Server" />
 </a>
 
 ## Overview
